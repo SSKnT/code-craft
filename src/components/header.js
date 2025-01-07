@@ -1,91 +1,18 @@
-import { Separator } from "@/components/ui/separator";
-import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
-
 const Header = () => {
   return (
-    <header className="px-4 py-2 border-b border-gray-200 fixed top-0 left-0 w-full md:h-16 h-14 z-20 bg-white backdrop-blur bg-opacity-70">
-      <div className="flex items-center h-full w-full">
-        {/* Logo Section */}
-        <div className="text-xl font-semibold md:ml-6">
-          <Link to="">
-            <h3 className="font-bold font-sans">Name</h3>
-          </Link>
-        </div>
-
-        <Badge
-          variant="default"
-          className=" ml-2 md:ml-3 font-sans h-[80%] md:h-[60%] text-blue-800 bg-blue-100 hover:bg-blue-200 bg-opacity-70 md:bg-opacity-100 "
-        >
-          v2.9.13
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="ml-1 w-3 h-4 inline-block"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            strokeWidth="3"
-          >
-            <path d="M19 9l-7 7-7-7" />
-          </svg>
-        </Badge>
-
-        <Badge
-          variant="default"
-          className="hidden md:block md:pt-[4px] xl:pt-[5px] ml-2 md:ml-3 font-sans h-[80%] md:h-[60%] text-yellow-800 bg-yellow-100 hover:bg-yellow-200 bg-opacity-70 md:bg-opacity-100 "
-        >
-          Beta Release
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="ml-1 w-3 h-4 inline-block"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            strokeWidth="3"
-          >
-            <path d="M19 9l-7 7-7-7" />
-          </svg>
-        </Badge>
-
-        {/* Navigation (Desktop version) */}
-        <div className="hidden md:flex space-x-6 ml-auto">
-          <nav>
-            <ul className="flex space-x-6 text-md font-sans font-semibold">
-              <li>
-                <a href="#home">Home</a>
-              </li>
-              <li>
-                <a href="#about">About</a>
-              </li>
-              <li>
-                <a href="#contact">Contact</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-
-        <Separator orientation="vertical" className="mx-4 h-[70%]" />
-        {/* GitHub Icon */}
-        <a
-          className="md:mx-2 mx-1"
-          href="https://github.com/my-prof"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="bi bi-github text-2xl"></i>
-        </a>
-
-        {/* LinkedIn Icon */}
-        <a
-          className="md:mx-2 mx-1"
-          href="https://www.linkedin.com/in/my-prof"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="bi bi-linkedin text-2xl"></i>
-        </a>
+    <header className="bg-white">
+      <div className="container mx-auto p-1 md:p-4 ">
+        <Logo src="https://placehold.co/100x50" />
       </div>
     </header>
+  );
+};
+
+const Logo = (src) => {
+  return (
+    <div className="flex w-full h-full my-auto mx-auto">
+      <img src={`${src}`}></img>
+    </div>
   );
 };
 
