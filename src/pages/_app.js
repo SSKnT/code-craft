@@ -18,11 +18,13 @@ export default function App({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
-      <Header />
-      <main className="">
-        <Component {...pageProps} />
-      </main>
-      <Footer />
+      <div className="flex flex-grow min-h-screen">
+        <Header />
+        <main className="flex-grow pt-14 lg:pt-[4.445rem]">
+          <Component {...pageProps} />
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }

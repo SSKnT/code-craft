@@ -1,35 +1,40 @@
-import { useState, useEffect } from "react";
+import useDarkMode from "@/hooks/useDarkMode"; // Import the hook
 
 export default function DarkModeToggle() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    // Initialize dark mode based on localStorage or system preference
-    const darkModeSetting = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    const enabledDarkMode =
-      darkModeSetting === "dark" || (!darkModeSetting && prefersDark);
-
-    setIsDarkMode(enabledDarkMode);
-    document.documentElement.classList.toggle("dark", enabledDarkMode);
-  }, []);
-
-  const toggleDarkMode = () => {
-    const newMode = !isDarkMode;
-    setIsDarkMode(newMode);
-
-    document.documentElement.classList.toggle("dark", newMode);
-    localStorage.setItem("theme", newMode ? "dark" : "light");
-  };
+  const { isDarkMode, toggleDarkMode } = useDarkMode(); // Use the hook to get dark mode state and toggle function
 
   return (
     <button
       onClick={toggleDarkMode}
-      className="p-2 rounded-md bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200"
+      className="text-gray-800 dark:text-gray-200"
     >
-      {isDarkMode ? "Light Mode" : "Dark Mode"}
+      {isDarkMode ? (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="md:size-5 lg:size-6"
+        >
+          <path
+            fillRule="evenodd"
+            d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z"
+            clipRule="evenodd"
+          />
+        </svg>
+      ) : (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="md:size-5 lg:size-6"
+        >
+          <path
+            fillRule="evenodd"
+            d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z"
+            clipRule="evenodd"
+          />
+        </svg>
+      )}
     </button>
   );
 }
