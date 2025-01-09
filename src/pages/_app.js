@@ -18,7 +18,7 @@ export default function App({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
-      <div className="flex flex-grow min-h-screen">
+      <div className="flex flex-col flex-grow min-h-screen">
         <Header />
         <main className="flex-grow pt-14 lg:pt-[4.445rem]">
           <Component {...pageProps} />
