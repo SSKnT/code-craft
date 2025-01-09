@@ -9,7 +9,7 @@ const Header = () => {
         <Nav />
         <Hire />
         <FullScreenDrawer />
-        <div className="hidden md:flex pl-2 lg:ml-0 lg:pl-4 border-l-[1px] border-black border-opacity-20 dark:border-white dark:border-opacity-20 h-full justify-center">
+        <div className="flex pl-2 lg:ml-0 lg:pl-4 border-l-[1px] border-black border-opacity-20 dark:border-white dark:border-opacity-20 h-full justify-center">
           <div className="flex p-2 justify-center rounded-3xl hover:bg-black hover:bg-opacity-10 dark:hover:bg-white dark:hover:bg-opacity-20 transition-all ease-in-out">
             <DarkModeToggle />
           </div>
